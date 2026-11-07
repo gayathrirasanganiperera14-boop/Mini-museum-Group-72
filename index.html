@@ -15,8 +15,8 @@
         let index = 0;
 
         this.el.addEventListener('click', () => {
-          index = (index + 1) % colors.length;
           this.el.setAttribute('color', colors[index]);
+          index = (index + 1) % colors.length;
         });
       }
     });
@@ -50,12 +50,22 @@
   </script>
 
   <style>
-    body { margin: 0; overflow: hidden; }
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
 
     #status {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      padding: 10px; text-align: center; color: white;
-      font-family: sans-serif; background: firebrick;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+      background: firebrick;
     }
   </style>
 </head>
@@ -119,12 +129,12 @@
                   color="limegreen"></a-sphere>
         <a-sphere position="0.34 0.58 0.06" radius="0.015" color="black"></a-sphere>
         <a-sphere position="0.34 0.58 -0.06" radius="0.015" color="black"></a-sphere>
-        <a-cone position="-0.405 0.27 0" rotation="0 0 95" radius-bottom="0.1" radius-top="0"
-                height="0.45" color="forestgreen"></a-cone>
+        <a-cone position="-0.405 0.27 0" rotation="0 0 95" radius-bottom="0.1"
+                radius-top="0" height="0.45" color="forestgreen"></a-cone>
       </a-entity>
 
       <a-sphere class="clickable" color-changer
-                position="0 0.5 0.35" radius="0.12" color="deeppink"
+                position="0 0.5 0.35" radius="0.12" color="red"
                 animation="property: position; from: 0 0.4 0.35; to: 0 0.7 0.35;
                            dir: alternate; dur: 700; easing: easeInOutQuad;
                            loop: true"></a-sphere>
@@ -152,9 +162,11 @@
 
       <a-text value="T-Rex Hall" position="0.4 0.75 0" align="center"
               width="1.4" color="lightgreen"></a-text>
+
     </a-marker>
 
-    <a-entity camera cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
+    <a-entity camera cursor="rayOrigin: mouse"
+              raycaster="objects: .clickable"></a-entity>
   </a-scene>
 </body>
 </html>
